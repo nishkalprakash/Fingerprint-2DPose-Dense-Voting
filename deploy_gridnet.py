@@ -92,6 +92,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     prefix = "image"
+
+    # this is the trained model parameters for plain fingerprints, trained models for rolled and
+    # latent fingerprints are coming soon...
+    #
+    # you can also tried the released model on rolled fingerprints and enhanced latent fingerprints
+    # (using FingerNet), but the performance is not guaranteed
     ckp_date = "gridnet4"
 
     ckp_dir = osp.join("./logs", ckp_date)
