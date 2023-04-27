@@ -1,7 +1,6 @@
 # Fingerprint 2D pose estimation
 Pytorch implementation of paper "Estimating Fingerprint Pose via Dense Voting"
 
-<!-- ![](./image_feature/pose_2d/gridnet4/1_1.png){:height="50%" width="50%"} -->
 <img src="./image_feature/pose_2d/gridnet4/1_1.png" width="20%" height="20%">
 
 ## Requirements
@@ -17,3 +16,17 @@ Pytorch implementation of paper "Estimating Fingerprint Pose via Dense Voting"
 
 ## Contact
 If you have any questions about our work, please contact [dyj17@mails.tsinghua.edu.cn]()
+
+## Citation
+If you find this project helpful, please cite our paper:
+```
+@ARTICLE{10100723,
+  author={Duan, Yongjie and Feng, Jianjiang and Lu, Jiwen and Zhou, Jie},
+  journal={IEEE Transactions on Information Forensics and Security}, 
+  title={Estimating Fingerprint Pose via Dense Voting}, 
+  year={2023},
+  volume={18},
+  number={},
+  pages={2493-2507},
+  doi={10.1109/TIFS.2023.3266625}}
+```
