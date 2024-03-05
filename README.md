@@ -9,7 +9,7 @@ Pytorch implementation of paper "Estimating Fingerprint Pose via Dense Voting"
 - pytorch==1.10.0
 
 ## Deploy
-1. download the [trained model](https://cloud.tsinghua.edu.cn/f/685981cc0d2f4d48ad41/?dl=1) and unzip it
+1. download the [trained model](https://cloud.tsinghua.edu.cn/f/6c2e2853c4664faabec4/?dl=1) and unzip it
 2. place the model in the folder [./logs](./logs)
 3. adjust the related parameters `prefix` in the file [./deploy_gridnet.py](./deploy_gridnet.py) according to your image location
 4. run `python deploy_gridnet.py -i <img_name.img_format>`
