@@ -59,7 +59,7 @@ def deploy(args, model, model_params, prefix):
     main_dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     with torch.no_grad():
         output = model.module.get_prediction(torch.from_numpy(img).float()[None, None].to(main_dev))
-    out_prefix = prefix.replace("fvc_fingerprint_datasets", "fvc_pose_2d_gridnet4")
+    out_prefix = prefix.replace("test_", "fvc_pose_2d_gridnet4")
     pose_file = osp.join(out_prefix, args.img_name.split(".")[0] + ".txt")
     show_file = osp.join(out_prefix, args.img_name.split(".")[0] + ".png")
     # seg_file = osp.join(prefix + "_feature", "seg", model_params.exp_name, args.img_name.split(".")[0] + ".png")
@@ -129,6 +129,7 @@ if __name__ == "__main__":
     i2p_model.eval()
 
     input_folder_list = Path("~/datasets/fvc_fingerprint_datasets/").expanduser().rglob("FVC200*/Dbs/DB*/")
+    input_folder_list = Path(".").expanduser().rglob("test_*")
     for input_folder in input_folder_list:
         image_files = [i.as_posix() for i in input_folder.glob("*") if i.as_posix().endswith(".tif") or i.as_posix().endswith(".bmp")]
         for image_file in image_files:
