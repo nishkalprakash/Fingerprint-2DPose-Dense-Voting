@@ -1,0 +1,52 @@
+gpus:
+- 5
+num_epochs: 1000
+batch_size: 32
+lr: 0.00035
+exp_name: gridnet4
+prefix: /home/duanyongjie/data/finger
+data_name: items_combine2
+repeat: 1
+seg_zoom: 4
+activate: softmax
+num_in: 1
+num_pose_2d:
+- 33
+- 33
+- 1
+ranges_2d: [-45, 45]
+num_layers:
+- 64
+- 128
+- 256
+- 512
+img_ppi: 500
+middle_shape:
+- 512
+- 512
+pretrained: true
+with_aug: true
+with_bg: true
+# with_bg: false
+with_enh: false
+with_tv: true
+bin_type: invprop
+loss_attrs:
+  offset:
+    - 1
+  grid:
+    - 1
+  mse:
+    - 0.001
+  bce:
+    - 1
+metric_keys:
+- center
+- theta
+- seg
+
+debug: false
+save_intervals: 5
+resume_ckp: null
+ckp_dir: ./logs
+comments: this model applies equalizeHist on background, and add random noise (Gaussian) on synthesized images, yaw angle in pose_3d is removed
